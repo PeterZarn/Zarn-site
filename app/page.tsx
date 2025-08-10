@@ -251,21 +251,7 @@ function Finding({ label, impact }: { label: string; impact: "Low"|"Medium"|"Hig
   );
 }
 
-function Guidance() {
-  return (
-    <section id="guidance" className="bg-neutral-900/40 border-y border-white/10 py-20">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="grid md:grid-cols-2 gap-10 items-start">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">Standard guidance</h2>
-            <p className="mt-4 text-neutral-300 max-w-prose">Zarn ships with pre-approved language your team can use immediately. Here are two examples you can customise:</p>
-            <ul className="mt-6 space-y-4 text-sm">
-              <li className="p-4 rounded-xl bg-neutral-900 border border-white/10 text-violet-200/90">
-                Never publish individual email addresses. Use a shared, role-based inbox to reduce the risk of impersonation, phishing, and unauthorised access to sensitive information.
-              </li>
-              <li className="p-4 rounded-xl bg-neutral-900 border border-white/10 text-violet-200/90">This event is open to attendees. Security protocols are in place.</li>
-            </ul>
-          </div>
+function 
           <Card>
             <CardHeader><CardTitle>Request a tailored policy pack</CardTitle></CardHeader>
             <CardContent>
