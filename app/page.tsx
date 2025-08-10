@@ -189,29 +189,39 @@ function Features() {
   );
 }
 
-function HowItWorks() {
+function HowItWorks() {function HowItWorks() {
   const steps = [
-    { step: 1, title: "Connect & scope", text: "Add your domains, social handles, and risk preferences. No code or pixel required." },
-    { step: 2, title: "Scan & detect", text: "Zarn parses pages and posts for exposures: personal data, org detail, events, impersonation vectors, and more." },
-    { step: 3, title: "Triage & act", text: "Receive concise alerts with evidence and approved mitigation copy. Sync to Slack, email, or ticketing." },
+    { step: 1, title: "User-driven checks", text: "Your team enters URLs for websites, social media posts, or other online content they want to assess." },
+    { step: 2, title: "Risk detection", text: "The software scans each URL for indicators of risk—such as sensitive information, location cues, or content that could be used to target people or property." },
+    { step: 3, title: "Free text box", text: "Users can type or paste content before it’s posted. The software highlights potential risks in real time, making it safer to communicate online." },
+    { step: 4, title: "Clear output", text: "The system presents the findings in a straightforward format designed to be easy for your teams to interpret and act on." },
+    { step: 5, title: "Support and training", text: "We provide onboarding to get your team up and running, with ongoing support available as needed." },
   ];
   return (
     <section id="how" className="bg-neutral-900/40 border-y border-white/10 py-20">
-      <div className="mx-auto max-w-7xl px-6">
-        <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">How it works</h2>
-        <div className="mt-10 grid md:grid-cols-3 gap-6">
-          {steps.map((s) => (
-            <div key={s.step} className="relative rounded-2xl border border-white/10 bg-neutral-900 p-6">
-              <div className="absolute -top-3 -left-3 h-14 w-14 rounded-2xl bg-gradient-to-br from-violet-500 to-fuchsia-400 text-neutral-950 grid place-items-center font-bold shadow-lg shadow-violet-500/30">{s.step}</div>
-              <h3 className="mt-10 text-xl font-semibold">{s.title}</h3>
-              <p className="mt-2 text-neutral-300 text-sm">{s.text}</p>
-            </div>
-          ))}
+      <div className="mx-auto max-w-7xl px-6 grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">How it works for your site</h2>
+          <div className="mt-8 grid gap-6">
+            {steps.map((s, i) => (
+              <div key={i} className="relative rounded-2xl border border-white/10 bg-neutral-900 p-6">
+                <div className="absolute -top-3 -left-3 h-10 w-10 rounded-xl bg-gradient-to-br from-violet-500 to-fuchsia-400 text-neutral-950 grid place-items-center font-bold shadow-lg shadow-violet-500/30">{i+1}</div>
+                <h3 className="mt-6 text-lg font-semibold">{s.title}</h3>
+                <p className="mt-2 text-neutral-300 text-sm">{s.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="relative">
+          <img src="/how-it-works.png" alt="How it works for your site" className="w-full rounded-2xl border border-white/10 bg-neutral-950" />
+          <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-white/10" />
         </div>
       </div>
     </section>
   );
 }
+
+  
 
 function UseCases() {
   const tags = ["Corporate comms", "Public sector", "Higher education", "Events & venues", "Healthcare", "Utilities", "Financial services"];
