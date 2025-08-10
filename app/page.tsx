@@ -84,10 +84,20 @@ function Hero() {
           <div className="relative rounded-3xl border border-white/10 bg-neutral-900 p-6 shadow-2xl">
             <div className="absolute -inset-1 rounded-3xl bg-gradient-to-br from-violet-500/20 to-fuchsia-400/10 blur-2xl -z-10" />
             <div className="grid gap-3">
-              <DemoRow icon={<Eye className="h-4 w-4" />} label="Personal data exposure" value="Employee emails published on /contact" severity="High" />
-              <DemoRow icon={<Megaphone className="h-4 w-4" />} label="Event announcement risk" value="Open guest list; impersonation risk" severity="Medium" />
-              <DemoRow icon={<Building2 className="h-4 w-4" />} label="Org details leak" value="Direct dials + job titles on team page" severity="High" />
-              <DemoRow icon={<Siren className="h-4 w-4" />} label="Social media threat" value="Executive doxxing in replies" severity="Critical" />
+             function DemoRow({ icon, label, value }: { icon: React.ReactNode; label: string; value: string }) {
+  return (
+    <div className="flex items-center justify-between rounded-xl border border-white/10 bg-neutral-900/60 p-3">
+      <div className="flex items-center gap-3">
+        <div className="grid place-items-center h-8 w-8 rounded-lg bg-white/5">{icon}</div>
+        <div>
+          <p className="text-sm text-neutral-300">{label}</p>
+          <p className="text-xs text-neutral-400">{value}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+ 
             </div>
             <div className="mt-6 rounded-2xl border border-white/10 bg-neutral-800/60 p-4">
               <p className="text-sm text-neutral-300">Recommended mitigation copy:</p>
